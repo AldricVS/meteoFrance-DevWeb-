@@ -1,0 +1,148 @@
+:root{
+    --main-color : #00BFFF;
+    --shadow : 15px 15px 35px black;
+    --transition : 300ms ease;
+}
+
+/*GENERAL RULES*/
+body{
+    background-color : #DCDCDC;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+}
+
+a.button{
+    display : inline-block;
+    text-decoration : none;
+    padding : 5px;
+    margin-bottom : 5px;
+    background-color: darkgray;
+    border : 1px solid black;
+    border-radius: 10px; 
+    box-shadow : var(--shadow);
+}
+
+a.button:hover{
+    color: white;
+    background-color: gray;
+}
+
+h1{
+    font-size : 28px
+}
+
+h2{
+    font-size : 18px;
+}
+
+/*HEADER*/
+header, footer, div#background-coloring{
+    background-color : var(--main-color);
+}
+
+header{
+    margin-bottom : 15vh;
+}
+
+header h1{
+    text-decoration : none;
+    position: absolute;
+    font-style: italic;
+    top : 10px;
+    right : 2%;
+}
+
+header h1 a:hover{
+    color : white;
+    text-decoration : none;
+}
+
+header i{
+    margin : 5px;
+    transition : var(--transition);
+}
+
+ul.under{
+    display : none;
+    opacity : 0;
+    transition : 300ms ease;
+}
+
+ul.under li{
+    background-color: #2471A3;
+    padding : 10px;
+} 
+
+.menu{
+    width : 20%;
+}
+
+.menu:hover i{
+    transform: rotate(90deg);   
+}
+
+.menu:hover > ul.under{
+    display: block;
+    position : absolute;
+    opacity : 1;
+}
+
+ul.under li:hover{
+    background-color: #AED6F1;
+    color : black;
+}
+
+.menu:hover > ul.under a{
+    text-decoration: none;
+    color : white;
+}
+
+
+/*MAIN*/
+main{
+    margin : 0 10%;
+    padding : 5em;
+    background-color : #F7F9F9 ;
+    box-shadow: var(--shadow);
+}
+
+main h2{
+    font-weight: bold;
+    border-bottom : 2px solid gray;
+    width: 50%;
+    padding : 1em;
+    transition : var(--transition);
+}
+
+main:hover h2{
+    width: 100%;
+}
+
+/*INDEX*/
+img.centered-img{
+    margin-top : 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*FOOTER*/
+footer{
+    text-align : center;
+    line-height: 3em;
+    margin-top : 15vh;
+}
+
+/*BACKGROUND-BAND*/
+div#background-coloring{
+    position : absolute;
+    width : 100%;
+    height : 250px;
+    top : 40%;
+    right : 0;
+    z-index : -100;
+}
