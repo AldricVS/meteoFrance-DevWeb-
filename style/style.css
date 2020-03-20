@@ -1,5 +1,5 @@
 :root{
-    --main-color : #00BFFF;
+    --main-color : #85C1E9;
     --shadow : 15px 15px 35px black;
     --transition : 300ms ease;
 }
@@ -19,7 +19,8 @@ a.button{
     display : inline-block;
     text-decoration : none;
     padding : 5px;
-    margin-bottom : 5px;
+    line-height: 3em;
+    margin: 10px;
     background-color: darkgray;
     border : 1px solid black;
     border-radius: 10px; 
@@ -49,7 +50,6 @@ header{
 }
 
 header h1{
-    text-decoration : none;
     position: absolute;
     font-style: italic;
     top : 10px;
@@ -58,6 +58,9 @@ header h1{
 
 header h1 a:hover{
     color : white;
+}
+
+h1 a, h1 a:hover{
     text-decoration : none;
 }
 
@@ -110,16 +113,10 @@ main{
     box-shadow: var(--shadow);
 }
 
-main h2{
+main > h2{
     font-weight: bold;
     border-bottom : 2px solid gray;
-    width: 50%;
     padding : 1em;
-    transition : var(--transition);
-}
-
-main:hover h2{
-    width: 100%;
 }
 
 /*INDEX*/
@@ -129,6 +126,28 @@ img.centered-img{
     margin-left: auto;
     margin-right: auto;
 }
+
+/*DEPARTEMENT CHOICE*/
+.dep h2{
+    margin-top : 3em;
+    border-bottom : 2px solid gray;
+    transition : var(--transition);
+    width : 50%;
+}
+
+.dep:hover h2{
+    width : 100%;
+}
+
+.dep div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dep div a{
+    margin-right : 5em;
+}
+
 
 /*FOOTER*/
 footer{
