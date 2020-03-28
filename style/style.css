@@ -32,6 +32,23 @@ a.button:hover{
     background-color: gray;
 }
 
+a.choice{
+    display : inline-block;
+    text-decoration : none;
+    padding : 5px;
+    line-height: 3em;
+    margin: 10px;
+    background-color: #5FA6C3;
+    border : 1px solid black;
+    border-radius: 10px; 
+    box-shadow : var(--shadow);
+}
+
+a.choice:hover{
+    color: white;
+    background-color: #19607D;
+}
+
 h1{
     font-size : 28px
 }
