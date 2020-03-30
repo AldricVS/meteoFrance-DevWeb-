@@ -1,11 +1,7 @@
 <?php
-    $depName = "Auvergne"; //à enlever
-
-
     //à faire dynamiquement
     $todayDate = "2020-03-28"; /*date s'écrit de la manière suivante : yyyy-mm-dd*/
     $currHour = "12"; //minutes non comptées
-
 
     $unauthorized = false;
     if(!isset($_GET["dep"]) && empty($_GET["dep"]))
@@ -36,12 +32,14 @@
         <p class="desc">Département : <?= $depName ?></p>
         
         <div class="double-buttons">
-            <?php /* Il faudra remettre le lien vers la page précédente dynamiquement, ex: 'choix-departement.php?dep=Ile_de_France'*/?>
-            <a class="button" href="choix-departement.php?dep=<?=$depName?>">Retour au choix du département</a>
+            <?php /*On garde le nom du département et de la région pour pouvoir revenir en arrière*/?>
+            <a class="button" href="choix-departement.php?reg=<?=$_GET["reg"]?>">Retour au choix du département</a>
             <a class="button" href="index.html">Retour à l'accueil</a>
         </div>
 
         <form method="GET" action="resultats.php">
+            <input type='hidden' name='reg' value=<?=$_GET["reg"]?> />
+            <input type='hidden' name='dep' value=<?=$depName?> />
             <select name="vil" id="ville-cb" value="Choix de la ville" required="required">
                 <?php //liste villes du département ici?>
                 <option value="" selected="selected" disabled="disabled">Choix de la ville</option>
