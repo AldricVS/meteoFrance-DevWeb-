@@ -1,7 +1,12 @@
 <?php
     $depName = "Auvergne"; //à enlever
-    $todayDate = "2020-03-28"; /* date s'écrit de la manière suivante : yyyy-mm-dd*/
+
+
+    //à faire dynamiquement
+    $todayDate = "2020-03-28"; /*date s'écrit de la manière suivante : yyyy-mm-dd*/
     $currHour = "12"; //minutes non comptées
+
+
     $unauthorized = false;
     if(!isset($_GET["dep"]) && empty($_GET["dep"]))
         $unauthorized = true;
@@ -37,8 +42,9 @@
         </div>
 
         <form method="GET" action="resultats.php">
-            <select name="vil" id="ville-cb" value="Choix de la ville" required>
-                <option value="" selected disabled>Choix de la ville</option>
+            <select name="vil" id="ville-cb" value="Choix de la ville" required="required">
+                <?php //liste villes du département ici?>
+                <option value="" selected="selected" disabled="disabled">Choix de la ville</option>
                 <option value="Ville_1">Ville_1</option>
                 <option value="Ville_2">Ville_2</option>
                 <option value="Ville_3">Ville_3</option>
@@ -50,41 +56,52 @@
             
             <div class="timesheet_options">
                 <label for="date">Le</label>
-                <input type="date" name="date" id="date" value=<?=$todayDate?> required/>
+                <input type="date" name="date" id="date" value=<?=$todayDate?> required="required"/>
 
                 <label for="hr">à</label>
-                <input type="number" id="hr" name="hr" min="0" max="23" value=<?= $currHour?> required/>
+                <input type="number" id="hr" name="hr" min="0" max="23" value=<?= $currHour?> required="required"/>
                 <label for="hr">heures</label>
 
                 <div class="time-slots">
-                    <label for="ph">Plage horaire</label>
-                    <input type="number" name="ph" id="ph" min="1" max="12" value="1"/>
-                    <div>
-                        <input type="radio" name="durtype" id="heure" value="hr" checked/>
-                        <label for="heure">heure(s)</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="durtype" id="jour" value="jr"/>
-                        <label for="jour">jour(s)</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="durtype" id="semaine" value="sm"/>
-                        <label for="semaine">semaine(s)</label>
-                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="ph">Plage horaire : </label>
+                                <input type="number" name="ph" id="ph" min="1" max="12" value="1"/>
+                            </td>
+                        <td>
+                            <div>
+                                <input type="radio" name="durtype" id="heure" value="hr" checked="checked"/>
+                                <label for="heure">heure(s)</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="durtype" id="jour" value="jr"/>
+                                <label for="jour">jour(s)</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="durtype" id="semaine" value="sm"/>
+                                <label for="semaine">semaine(s)</label>
+                            </div>
+                            </label>
+                        </td>
+                    </table>
                 </div>
             </div>
 
+            <p class="desc">Paramètres optionnels</p>
+
             <div class="param-opt">
-                <p class="dessc">Paramètres optionnels</p>
                 <input type="checkbox" id="vent" name="vent" value="y"/>
                 <label for="vent">Vitesse du vent</label>
                 <input type="checkbox" id="poll" name="poll" value="y"/>
                 <label for="poll">Pollution atmosphérique</label>
-                <input type="checkbox" id="carte" name="carte" value="y"/>
-                <label for="vent">Carte des environs</label>
+                <input type="checkbox" id="pop" name="pop" value="y"/>
+                <label for="vent">Nombre d'habitants</label>
             </div>
 
-            <input type="submit" value="Lancer la recherche!"/>
+            <div class="centered">
+                <input type="submit" value="Lancer la recherche!"/>
+            <div>
         </form>
     </main>
 </body>

@@ -22,12 +22,12 @@
 
 		//on affiche tout dans la bonne forme
 		foreach ($list as $init => $depart) {
-			echo "\t\t\t<section class='dep'>\n";
-			echo "\t\t\t\t<h2>". $init .". </h2>\n";
+			echo "\t\t\t<section class='dep' id='". $init ."'>\n";
+			echo "\t\t\t\t<h2>". $init ." (". count($depart) ." département(s)). </h2>\n";
 			foreach($depart as $elt){
 				$depName = $elt[1];
 				$depAndNumber = $depName . " (" . $elt[0] . ")";
-				echo "\t\t\t\t<a class='choice' href='personnalisation-recherche.php?dep=" . $depName  ."'>".$depAndNumber."</a>\n";
+				echo "\t\t\t\t<a class='choice' href=\"personnalisation-recherche.php?dep=" . $depName  ."\">".$depAndNumber."</a>\n";
 			}
 			echo "\t\t\t</section>\n";
 		}

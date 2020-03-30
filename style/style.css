@@ -1,5 +1,7 @@
 :root{
     --main-color : #85C1E9;
+    --alternative-color : #5FA6C3;
+    --alternative-color-darker : #19607D;
     --shadow : 15px 15px 35px black;
     --transition : 300ms ease;
 }
@@ -38,7 +40,7 @@ a.choice{
     padding : 5px;
     line-height: 3em;
     margin: 10px;
-    background-color: #5FA6C3;
+    background-color: var(--alternative-color);
     border : 1px solid black;
     border-radius: 10px; 
     box-shadow : var(--shadow);
@@ -46,7 +48,7 @@ a.choice{
 
 a.choice:hover{
     color: white;
-    background-color: #19607D;
+    background-color: var(--alternative-color-darker);
 }
 
 h1{
@@ -55,6 +57,10 @@ h1{
 
 h2{
     font-size : 18px;
+}
+
+div.centered{
+    text-align: center;
 }
 
 /*HEADER*/
@@ -165,6 +171,75 @@ img.centered-img{
     margin-right : 5em;
 }
 
+/*PARAMS*/
+p.desc{
+    color : grey;
+    margin-left : 5em;
+}
+
+div.double-buttons{
+    --marg: 3em;
+    display : block;
+    text-align: center;
+    margin-top : var(--marg);
+    margin-bottom : var(--marg);
+}
+
+select{
+    background-color: var(--alternative-color);
+    width : 100%;
+    height : 5em;
+    border-radius: 5px;
+    margin-bottom : 3em;
+    text-align: center;
+    outline: none;
+}
+
+div.timesheet_options{
+    padding : 2em;
+    background-color: silver;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+div.timesheet_options input[type="date"]{
+    margin-right : 2em;
+    margin-bottom : 3em;
+}
+
+div.time-slots table {
+    margin: auto;
+}
+
+div.time-slots table td{
+    padding : 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+div.param-opt{
+    text-align: center;
+    margin: 3em;
+}
+
+div.param-opt label{
+    margin-right: 20px;
+}
+
+form input[type="submit"]{
+    padding : 5px;
+    line-height: 3em;
+    margin: 10px;
+    background-color: var(--alternative-color);
+    border : 1px solid black;
+    border-radius: 10px; 
+    box-shadow : var(--shadow);
+}
+
+form input[type="submit"]:hover{
+    background-color: var(--alternative-color-darker);
+    color: white;
+}
 
 /*FOOTER*/
 footer{
