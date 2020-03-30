@@ -1,27 +1,4 @@
 <?php
-    function selectdep($fletre, $dep){
-        $csv_string = file_get_contents('./csv/dep.csv');
-        $csv_dep =  str_getcsv($csv_string);
-        $region = array( "Bretagne"=> 53,"Normandie" =>28,"Hauts-de-France" => 32, "Ile-de-France"=> 11,"Grand-Est"=>44, "Bourgone-Franche-Comté"=> 27, "Centre-Val_de_Loire"=> 24,"Pays_de_la_Loire"=> 52, "Nouvelle_Aquitaine"=> 75, "Auvergne-Rhône-Alpes"=> 84,"Provence-Alpes-Côte_d'azur"=> 93, "Occitanie"=> 76, "Corse"=> 94);
-        $id_region=$region[$dep]; // id of region pass as parametre 
-        
-        for($i=0;$i<99;$i++){
-            $r=$i*2+1;
-            $t=2*$i;
-
-          if( substr($csv_dep[$r],0,1)==$fletre){
-              
-                if($id_region==$csv_dep[$t]){
-
-                 echo"<a class=\"choice\">".$csv_dep[$r]."</a>";  
-                }
-                
-                
-            }
-        }
-      //echo 
-    }
-
 	function getDepFromRegion($dep=""){
 		//avant, on regarde si le ficheir csv existe et si on peut l'utiliser
 		$file = fopen('./csv/departements-region.csv', 'r') or die("Erreur lors de l'ouverture du fichier");
