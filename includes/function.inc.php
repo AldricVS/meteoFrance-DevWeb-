@@ -26,7 +26,8 @@
 			echo "\t\t\t\t<h2>". $init .". </h2>\n";
 			foreach($depart as $elt){
 				$depName = $elt[1];
-				echo "\t\t\t\t<a class='choice' href='personnalisation-recherche.php?dep=" . $depName  ."'>".$depName."</a>\n";
+				$depAndNumber = $depName . " (" . $elt[0] . ")";
+				echo "\t\t\t\t<a class='choice' href='personnalisation-recherche.php?dep=" . $depName  ."'>".$depAndNumber."</a>\n";
 			}
 			echo "\t\t\t</section>\n";
 		}

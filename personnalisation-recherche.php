@@ -28,7 +28,7 @@
     <?php include("includes/header.inc.php");?>
     <main>
         <h2>Personnalisation du résultat</h2>
-        <p class="desc">Département : <?= $depName /**/?></p>
+        <p class="desc">Département : <?= $depName ?></p>
         
         <div class="double-buttons">
             <?php /* Il faudra remettre le lien vers la page précédente dynamiquement, ex: 'choix-departement.php?dep=Ile_de_France'*/?>
